@@ -272,13 +272,52 @@ button img {
         </div>
           <button class="google">
             <img
-              src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"
+              src="https://cdn.freebiesupply.com/logos/large/2x/facebook-3-logo-png-transparent.png"
               alt=""
             />
-            LogIn with Google
+            LogIn with FaceBook
           </button>
       </div>
     </main>
   </body>
-  <script src="../js/Forms/Login.js"></script>
-</html>
+ <script>
+  const email = document.getElementById("email");
+const mobile = document.getElementById("mobile");
+const Password = document.getElementById("password");
+const submit = document.getElementById("submit");
+let flag = 1;
+
+const validEmail = document.getElementById("valid1");
+const validMob = document.getElementById("valid2");
+const validPass = document.getElementById("valid3");
+
+
+function validateForm() {
+  if (email.value == "") {
+    validEmail.style.color = "red";
+  } else if (email.value !== "") {
+    validEmail.style.color = "green";
+  }
+
+  if (mobile.value == "") {
+    validMob.style.color = "red";
+  } else if (mobile.value !== "") {
+    validMob.style.color = "green";
+  }
+
+  if (Password.value == "") {
+    validPass.style.color = "red";
+  } else if (Password.value !== "") {
+    validPass.style.color = "green";
+  }
+
+  const greenvalid = ( validEmail.style.color === "green" && validMob.style.color === "green" && validPass.style.color === "green" ) ? (flag = 1) : (flag = 0);
+
+  if (flag) {
+    return true;
+  } else {
+    return false;
+  }
+}
+ </script>
+  </html>

@@ -23,13 +23,12 @@ app.post("/Login", async (req, res) => {
 
 app.post("/CreatABlog",async(req,res)=>{
     try{
-       const {Title,File,Paragraph} = req.body;
-       await connection.query("INSERT INTO Data_Of_Blog(Title,img,blog) VALUES(?,?,?)",[Title,File,Paragraph])
+       const {Title,Paragraph} = req.body;
+       await connection.query("INSERT INTO Data_Of_Blog(Title,blog) VALUES(?,?)",[Title,Paragraph])
     }catch(error){
         console.log(error);
         res.statusCode(500).send("here is an error")
     }
-    
 })
 
 app.get("/Login", (req, res) => {
